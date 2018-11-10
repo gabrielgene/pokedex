@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Javascript Basico</title>
+  </head>
+  <body>
+    <h1>Básico de Js</h1>
+    <script>
+      //metodos de arrays
+
+      //const - let
+      // const nome = 'Gene';
+      // console.log(nome);
+      // let idade = 21;
+      // idade = idade + 1;
+      // console.log(idade);
+
+      // comparadores
+      // const numero = 1;
+      // const texto = '1';
+      // console.log(numero === texto);
+      // console.log(numero + false);
+      // console.log(texto + true);
+
+      // numeros.forEach(item => numerosSomados.push(item + 1));
+      // const numerosSomados = numeros.map(item => item + 1);
+      // const igualADoisnumeros = numeros.filter(item => item % 2 === 0);
+      // const encontreiOQuarto = numeros.find(item => item === 4);
+      const pessoa = { nome: 'Gene', idade: 21 };
+      const pessoa2 = { nome: 'Gene', idade: 22 };
+      const pessoa3 = { nome: 'Jocta', idade: 22 };
+      const pessoas = [pessoa, pessoa2, pessoa3];
+
+      const numeros = [1, 2, 3, 4];
+
+      // const gene = pessoas.find(p => p.nome === 'Gene');
+      // const genes = pessoas.map(p => p.nome === 'Gene' && p);
+
+      // console.log(numeros);
+      // console.log(numerosSomados);
+      // console.log(igualADoisnumeros);
+      // console.log(encontreiOQuarto);
+      // console.log(pessoas);
+      // console.log(gene);
+      // console.log(genes);
+
+      function soma(type) {
+        if (type === '5') {
+          return valor => valor + 5;
+        }
+        return valor => valor - 5;
+      }
+
+      // console.log(soma()(10));
+
+      class Aluno {
+        constructor(nome, matricula) {
+          this.nome = nome;
+          this.matricula = matricula;
+        }
+
+        falarMatricula() {
+          // console.log('Minha matricula é: ' + this.matricula);
+          console.log(`Minha matricula é: ${this.matricula}`);
+        }
+      }
+
+      const gene = new Aluno('Gene', 123);
+      // gene.falarMatricula();
+
+      var outroNumero = 17;
+
+      const modulo = {
+        outroNumero: 42,
+        printOutroNumero: function()  { return this.outroNumero },
+      };
+
+      const unbound = modulo.printOutroNumero;
+      console.log(unbound());
+
+      const bound = unbound.bind(modulo);
+      console.log(bound());
+    </script>
+  </body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>React Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <h1 id="h1">Hello world</h1>
+    <div id="app"></div>
+
+    <button onclick="myFunction()">Gerar elemento</button>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react-dom.js"></script>
+    <!--
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+    -->
+
+    <script>
+      // <script type="text/babel">
+
+      //const - let
+      //comparadores
+      //metodos de arrays
+
+      // function print () {
+      //   return console.log
+      // };
+
+      // print()('Ola')
+
+
+      class Pessoa {
+        constructor(nome, idade) {
+          this.nome = nome;
+          this.idade = idade;
+        }
+
+        falarNome() {
+          console.log(`meu nome é ${this.nome}`);
+        }
+      }
+
+      var x = 17;
+      var module = {
+        x: 42,
+        getX: function() {
+          return this.x;
+        }
+      };
+
+      const gene = new Pessoa('gene', 21);
+      gene.falarNome()
+      console.log(gene.nome);
+
+
+      var unboundGetX = module.getX;
+      console.log(unboundGetX()); // The function gets invoked at the global scope
+      // expected output: undefined
+
+      var boundGetX = unboundGetX.bind(module);
+      console.log(boundGetX());
+      // expected output: 42
+
+      function myFunction() {
+        const btn = document.createElement('BUTTON');
+        const t = document.createTextNode('CLICK ME');
+        btn.appendChild(t);
+        btn.onclick = myFunction;
+        document.body.appendChild(btn);
+        const h1 = document.getElementById('h1');
+        if (h1) {
+          console.log(h1);
+          h1.parentNode.removeChild(h1);
+        }
+      }
+      // console.log(React);
+
+      // var span = React.createElement('span', null, 'Span texto')
+      // var div = React.createElement('div', null, span);
+      // console.log(div);
+      // ReactDOM.render(div, document.getElementById('app'));
+
+      // ReactDOM.render(
+      //   <div>
+      //     <span>Span com JSX</span>
+      //   </div>,
+      //   document.getElementById('app')
+      // );
+
+      // var Span = React.createClass({
+      //   render: () => <span>Span renderizado</span>
+      // });
+
+      // var Title = React.createClass({
+      //   render: () => (
+      //     <div>
+      //       <Span />
+      //     </div>
+      //   )
+      // });
+
+      // ReactDOM.render(<Title />, document.getElementById('app'));
+    </script>
+  </body>
+</html>

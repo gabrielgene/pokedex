@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>JS Raiz</title>
+  </head>
+  <body>
+    <h1>JS Raiz</h1>
+    <div id="app"><button onclick="autoDestruicao()">Destruir</button></div>
+
+    <script>
+      function autoDestruicao() {
+        const root = document.getElementById('app');
+        const pai = root.parentNode;
+        console.log(pai);
+        pai.removeChild(root);
+      }
+      function criarElemento() {
+        const btn = document.createElement('button');
+        btn.onclick = criarElemento;
+        const texto = document.createTextNode('Criar elemento');
+        btn.appendChild(texto);
+
+        const root = document.getElementById('app');
+        root.appendChild(btn);
+        console.log(btn);
+      }
+      criarElemento();
+    </script>
+
+    <!--
+      <button onclick="myFunction()">Gerar elemento</button>
+      <script>
+        function myFunction() {
+          const btn = document.createElement('BUTTON');
+          const t = document.createTextNode('CLICK ME');
+          btn.appendChild(t);
+          btn.onclick = myFunction;
+          document.body.appendChild(btn);
+          const h1 = document.getElementById('h1');
+          if (h1) {
+            console.log(h1);
+            h1.parentNode.removeChild(h1);
+          }
+        }
+      </script>
+    -->
+  </body>
+</html>
